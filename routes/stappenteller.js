@@ -18,9 +18,10 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 	// console.log(req.body);
 	const stappentellers = new Stappenteller({
-		aantal: req.body.aantal,
-		date: req.body.date
+		date: req.body.date,
+		aantal: req.body.aantal
 	});
+	console.log(stappentellers);
 
 	try {
 		const savedStappen = await stappentellers.save();

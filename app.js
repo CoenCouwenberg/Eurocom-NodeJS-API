@@ -23,10 +23,12 @@ app.use(express.json());
 const postsRoute = require('./routes/posts');
 const stappenRoute = require('./routes/stappenteller');
 const wandelRoute = require('./routes/wandelsnelheid');
+const zittenRoute = require('./routes/zitten');
 
 app.use('/posts', postsRoute);
 app.use('/stappenteller', stappenRoute);
 app.use('/wandelsnelheid', wandelRoute);
+app.use('/zitten', zittenRoute);
 // app.use('/user', userRoute);
 
 // Routses

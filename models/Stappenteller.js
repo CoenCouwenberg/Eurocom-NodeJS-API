@@ -6,7 +6,7 @@ const StappentellerSchema = mongoose.Schema({
 		required: true
 	},
 	date: {
-		date: Date
+		type: String
 	}
 });
 

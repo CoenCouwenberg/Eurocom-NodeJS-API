@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Wandelsnelheid = require('../models/Wandelsnelheid');
+const Zitten = require('../models/Zitten');
 
-// Gets back all the WANDELSNELHEIIIDDDDD
+// Gets back all the ZITTENNNNN
 router.get('/', async (req, res) => {
 	try {
-		const wandelsnelheid = await Wandelsnelheid.find();
-		res.json(wandelsnelheid);
+		const zitten = await Zitten.find();
+		res.json(zitten);
 		// console.log(stappentellers);
 	} catch(err) {
 		res.json({message:err});
@@ -17,13 +17,13 @@ router.get('/', async (req, res) => {
 // Submits a postt
 router.post('/', async (req, res) => {
 	// console.log(req.body);
-	const wandelsnelheid = new Wandelsnelheid({
-		snelheid: req.body.snelheid,
+	const zitten = new Zitten({
+		aantal: req.body.aantal,
 		tijd: req.body.tijd
 	});
 
 	try {
-		const savedStappen = await wandelsnelheid.save();
+		const savedStappen = await zitten.save();
 		res.json(savedStappen);
 	} catch (err) {
 		res.json({ message: err});
